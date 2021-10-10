@@ -120,10 +120,10 @@
   
   <entry>
     <title>Linux共用與Windows資料夾建立軟連結</title>
-    <link href="https://kevintoshi0208.github.io/2018/10/10/Linux%E5%85%B1%E7%94%A8%E8%B3%87%E6%96%99%E5%A4%BE%E5%BB%BA%E7%AB%8B%E8%BB%9F%E9%80%A3%E7%B5%90/"/>
-    <id>https://kevintoshi0208.github.io/2018/10/10/Linux%E5%85%B1%E7%94%A8%E8%B3%87%E6%96%99%E5%A4%BE%E5%BB%BA%E7%AB%8B%E8%BB%9F%E9%80%A3%E7%B5%90/</id>
+    <link href="https://kevintoshi0208.github.io/2018/10/10/Linux%E5%85%B1%E7%94%A8%E8%88%87Windows%E8%B3%87%E6%96%99%E5%A4%BE%E5%BB%BA%E7%AB%8B%E8%BB%9F%E9%80%A3%E7%B5%90/"/>
+    <id>https://kevintoshi0208.github.io/2018/10/10/Linux%E5%85%B1%E7%94%A8%E8%88%87Windows%E8%B3%87%E6%96%99%E5%A4%BE%E5%BB%BA%E7%AB%8B%E8%BB%9F%E9%80%A3%E7%B5%90/</id>
     <published>2018-10-10T14:07:21.000Z</published>
-    <updated>2021-10-10T14:19:31.507Z</updated>
+    <updated>2021-10-10T14:43:32.721Z</updated>
     
     <content type="html"><![CDATA[<h1 id="筆記-Linux共用與Windows資料夾建立軟連結"><a href="#筆記-Linux共用與Windows資料夾建立軟連結" class="headerlink" title="[筆記] Linux共用與Windows資料夾建立軟連結"></a>[筆記] Linux共用與Windows資料夾建立軟連結</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在玩Linux時<br>在本機Win 10 上裝了CentOS 7<br>mount 共用資料夾 讓CentOS7 nginx<br>可以讀到在win 10裡 開發時的Project Folder<br>但npm和yarn 在install時 碰到了以下的問題:<br>EROFS: read-only file system, symlink ‘../../../parser/bin/babel-parser.js’ -&gt; ‘/media/web/webpack-practice/node_modules/@babel/core/node_modules/.bin/parser<br>調查了一下 發現是因為VM mount了資料夾後<br>卻沒有權限建立link連結   </p><p>環境</p><p>主機: Windows 10<br>VM: VituralBox 6.0.2r2 -CentOS  </p><p>解法</p><p>首先是Virtual Box的設定<br>開啟Cmd 執行:  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@OracleVirtualBox\VBoxManage.exe setextradata @VMName VBoxInternal2/SharedFoldersEnableSymlinksCreate/@SHAREFOLDERNAME 1  </span><br></pre></td></tr></table></figure><p>@OracleVirtualBox： 這是VirtualBox的預設資料夾。<br>@VMName： 請修改為你要開啟的VM名稱。<br>@SHAREFOLDERNAME：修改為VM設定中共用資料夾的名稱<br>此時試著在你的linux mount的資料夾內建立軟連結  </p><pre><code>$ ln -s [target] [link]  </code></pre><p>可能還是會顯示  </p><pre><code>ln: failed to create symbolic link `LINKNAME&#39;: Protocol error  </code></pre><p>這是資料的權限不足 可以試著用系統管理員開啟Virtual Box  </p><p>如果還是不行  </p><p>跟著筆者試試下面的方法:<br>開啟 windows 的 執行 輸入 secpol 開啟以下畫面  </p><p><img src="07481bf27739f6f4d6c323465d3c56e0-1.png" alt="Alt text"></p><p>本機原則-&gt;使用者權限指派-&gt;建立符號連結<br>將自己目前的使用者加入 進去重新開機後<br>開啟cmd 測試著建立連結  </p><pre><code>C:\&gt; mklink /d [link] [target]</code></pre><p>完成後 yarn/npm就能順利install專案了  </p><p><img src="07481bf27739f6f4d6c323465d3c56e0-2.png" alt="Alt text"></p>]]></content>
     
