@@ -33,12 +33,6 @@
     
     
     
-    <category term="英文" scheme="http://yoursite.com/categories/%E8%8B%B1%E6%96%87/"/>
-    
-    <category term="看動畫學英文" scheme="http://yoursite.com/categories/%E8%8B%B1%E6%96%87/%E7%9C%8B%E5%8B%95%E7%95%AB%E5%AD%B8%E8%8B%B1%E6%96%87/"/>
-    
-    <category term="nekopara" scheme="http://yoursite.com/categories/%E8%8B%B1%E6%96%87/%E7%9C%8B%E5%8B%95%E7%95%AB%E5%AD%B8%E8%8B%B1%E6%96%87/nekopara/"/>
-    
     
     <category term="看動畫學英文" scheme="http://yoursite.com/tags/%E7%9C%8B%E5%8B%95%E7%95%AB%E5%AD%B8%E8%8B%B1%E6%96%87/"/>
     
@@ -61,12 +55,6 @@
     
     
     
-    <category term="英文" scheme="http://yoursite.com/categories/%E8%8B%B1%E6%96%87/"/>
-    
-    <category term="看動畫學英文" scheme="http://yoursite.com/categories/%E8%8B%B1%E6%96%87/%E7%9C%8B%E5%8B%95%E7%95%AB%E5%AD%B8%E8%8B%B1%E6%96%87/"/>
-    
-    <category term="nekopara" scheme="http://yoursite.com/categories/%E8%8B%B1%E6%96%87/%E7%9C%8B%E5%8B%95%E7%95%AB%E5%AD%B8%E8%8B%B1%E6%96%87/nekopara/"/>
-    
     
     <category term="看動畫學英文" scheme="http://yoursite.com/tags/%E7%9C%8B%E5%8B%95%E7%95%AB%E5%AD%B8%E8%8B%B1%E6%96%87/"/>
     
@@ -77,7 +65,7 @@
     <link href="http://yoursite.com/wiki/%E6%9B%B8%E6%91%98-Kurbernete-Up-and-Running-Introduce-1/"/>
     <id>http://yoursite.com/wiki/%E6%9B%B8%E6%91%98-Kurbernete-Up-and-Running-Introduce-1/</id>
     <published>2021-10-10T10:33:00.000Z</published>
-    <updated>2021-10-10T11:00:39.252Z</updated>
+    <updated>2021-10-10T14:03:24.060Z</updated>
     
     <content type="html"><![CDATA[<h3 id="書摘-Kurbernete-Up-and-Running-Introduce-1"><a href="#書摘-Kurbernete-Up-and-Running-Introduce-1" class="headerlink" title="書摘 - Kurbernete: Up and Running-Introduce - 1"></a>書摘 - Kurbernete: Up and Running-Introduce - 1</h3><p>Kurbernete 是一個開源的應用容器部屬自動化管理工具(orchestrator)，它提供成功建置與部署可擴展可依賴分布是系統的軟體需求。<br>人們有許多理由使用像Kurbernete這樣的 容器和容器 API服務，但仍可追溯回下列以下原因:  </p><ul><li>Velocity(速度)</li><li>Scaling (of both software and teams) 擴展性</li><li>Abstracting your infrastructure 抽象化基礎設施</li><li>Efficiency 效率</li></ul><h4 id="Velocity-速度"><a href="#Velocity-速度" class="headerlink" title="Velocity 速度"></a>Velocity 速度</h4><p>產品疊代的速度越來越快，以往使用者可以接受半夜的維護時間，但現在的使用者希望產品可以持續不段的使用，儘管產品會不斷的持續疊待更新。<br>使用kurbernete 可以讓你的應用程式更新迅速且持續運作，以下是處理這個問題的核心概念:  </p><ul><li>Immutability </li><li>Declarative configuration</li><li>Online self-healing systems</li></ul>]]></content>
     
@@ -88,10 +76,6 @@
       
     
     
-    
-    <category term="書摘" scheme="http://yoursite.com/categories/%E6%9B%B8%E6%91%98/"/>
-    
-    <category term="Kurbernete: Up and Running-Introduce" scheme="http://yoursite.com/categories/%E6%9B%B8%E6%91%98/Kurbernete-Up-and-Running-Introduce/"/>
     
     
   </entry>
@@ -113,8 +97,6 @@
     
     
     
-    <category term="Devops" scheme="http://yoursite.com/categories/Devops/"/>
-    
     
   </entry>
   
@@ -125,7 +107,7 @@
     <published>2018-10-10T14:07:21.000Z</published>
     <updated>2021-10-10T14:50:20.831Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="筆記-Linux共用與Windows資料夾建立軟連結"><a href="#筆記-Linux共用與Windows資料夾建立軟連結" class="headerlink" title="[筆記] Linux共用與Windows資料夾建立軟連結"></a>[筆記] Linux共用與Windows資料夾建立軟連結</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在玩Linux時<br>在本機Win 10 上裝了CentOS 7<br>mount 共用資料夾 讓CentOS7 nginx<br>可以讀到在win 10裡 開發時的Project Folder<br>但npm和yarn 在install時 碰到了以下的問題:<br>EROFS: read-only file system, symlink ‘../../../parser/bin/babel-parser.js’ -&gt; ‘/media/web/webpack-practice/node_modules/@babel/core/node_modules/.bin/parser<br>調查了一下 發現是因為VM mount了資料夾後<br>卻沒有權限建立link連結   </p><p>環境</p><p>主機: Windows 10<br>VM: VituralBox 6.0.2r2 -CentOS  </p><p>解法</p><p>首先是Virtual Box的設定<br>開啟Cmd 執行:  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@OracleVirtualBox\VBoxManage.exe setextradata @VMName VBoxInternal2/SharedFoldersEnableSymlinksCreate/@SHAREFOLDERNAME 1  </span><br></pre></td></tr></table></figure><p>@OracleVirtualBox： 這是VirtualBox的預設資料夾。<br>@VMName： 請修改為你要開啟的VM名稱。<br>@SHAREFOLDERNAME：修改為VM設定中共用資料夾的名稱<br>此時試著在你的linux mount的資料夾內建立軟連結  </p><pre><code>$ ln -s [target] [link]  </code></pre><p>可能還是會顯示  </p><pre><code>ln: failed to create symbolic link `LINKNAME&#39;: Protocol error  </code></pre><p>這是資料的權限不足 可以試著用系統管理員開啟Virtual Box  </p><p>如果還是不行  </p><p>跟著筆者試試下面的方法:<br>開啟 windows 的 執行 輸入 secpol 開啟以下畫面  </p><img src="/2018/10/10/Linux%E5%85%B1%E7%94%A8%E8%88%87Windows%E8%B3%87%E6%96%99%E5%A4%BE%E5%BB%BA%E7%AB%8B%E8%BB%9F%E9%80%A3%E7%B5%90/07481bf27739f6f4d6c323465d3c56e0-1.png" class=""><p>本機原則-&gt;使用者權限指派-&gt;建立符號連結<br>將自己目前的使用者加入 進去重新開機後<br>開啟cmd 測試著建立連結  </p><pre><code>C:\&gt; mklink /d [link] [target]</code></pre><p>完成後 yarn/npm就能順利install專案了  </p><img src="/2018/10/10/Linux%E5%85%B1%E7%94%A8%E8%88%87Windows%E8%B3%87%E6%96%99%E5%A4%BE%E5%BB%BA%E7%AB%8B%E8%BB%9F%E9%80%A3%E7%B5%90/07481bf27739f6f4d6c323465d3c56e0-2.png" class="">]]></content>
+    <content type="html"><![CDATA[<h1 id="筆記-Linux共用與Windows資料夾建立軟連結"><a href="#筆記-Linux共用與Windows資料夾建立軟連結" class="headerlink" title="[筆記] Linux共用與Windows資料夾建立軟連結"></a>[筆記] Linux共用與Windows資料夾建立軟連結</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在玩Linux時<br>在本機Win 10 上裝了CentOS 7<br>mount 共用資料夾 讓CentOS7 nginx<br>可以讀到在win 10裡 開發時的Project Folder<br>但npm和yarn 在install時 碰到了以下的問題:<br>EROFS: read-only file system, symlink ‘../../../parser/bin/babel-parser.js’ -&gt; ‘/media/web/webpack-practice/node_modules/@babel/core/node_modules/.bin/parser<br>調查了一下 發現是因為VM mount了資料夾後<br>卻沒有權限建立link連結   </p><p>環境</p><p>主機: Windows 10<br>VM: VituralBox 6.0.2r2 -CentOS  </p><p>解法</p><p>首先是Virtual Box的設定<br>開啟Cmd 執行:  </p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@OracleVirtualBox\VBoxManage.exe setextradata @VMName VBoxInternal2/SharedFoldersEnableSymlinksCreate/@SHAREFOLDERNAME 1  </span><br></pre></td></tr></table></figure><p>@OracleVirtualBox： 這是VirtualBox的預設資料夾。<br>@VMName： 請修改為你要開啟的VM名稱。<br>@SHAREFOLDERNAME：修改為VM設定中共用資料夾的名稱<br>此時試著在你的linux mount的資料夾內建立軟連結  </p><pre><code>$ ln -s [target] [link]  </code></pre><p>可能還是會顯示  </p><pre><code>ln: failed to create symbolic link `LINKNAME&#39;: Protocol error  </code></pre><p>這是資料的權限不足 可以試著用系統管理員開啟Virtual Box  </p><p>如果還是不行  </p><p>跟著筆者試試下面的方法:<br>開啟 windows 的 執行 輸入 secpol 開啟以下畫面  </p><p>本機原則-&gt;使用者權限指派-&gt;建立符號連結<br>將自己目前的使用者加入 進去重新開機後<br>開啟cmd 測試著建立連結  </p><pre><code>C:\&gt; mklink /d [link] [target]</code></pre><p>完成後 yarn/npm就能順利install專案了  </p>]]></content>
     
     
       
@@ -134,8 +116,6 @@
       
     
     
-    
-    <category term="Devops" scheme="http://yoursite.com/categories/Devops/"/>
     
     
   </entry>
@@ -156,12 +136,6 @@
       
     
     
-    
-    <category term="程式設計" scheme="http://yoursite.com/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/"/>
-    
-    <category term="後端" scheme="http://yoursite.com/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/%E5%BE%8C%E7%AB%AF/"/>
-    
-    <category term="Symfony" scheme="http://yoursite.com/categories/%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/%E5%BE%8C%E7%AB%AF/Symfony/"/>
     
     
   </entry>
